@@ -32,7 +32,7 @@ class BstTest < Minitest::Test
   end
 
   def test_complex_tree
-    skip
+    # skip
     four = Bst.new 4
     four.insert 2
     four.insert 6

@@ -12,9 +12,17 @@ class Bst
     def insert(num2)
         
         if num2 < @num # New num lesser?
-            @left = Bst.new(num2)
+            if @left == nil # Does not overwrite old data
+                @left = Bst.new(num2)
+            else # Instead, goes down one level of the tree and then reruns the function again
+                @left.insert(num2)
+            end
         elsif num2 > @num # New num greater?
-            @right = Bst.new(num2)
+            if @right == nil # No overwriting
+                @right = Bst.new(num2)
+            else # Go down one level and repeat function
+                @right.insert(num2)
+            end
         end
     end
 
