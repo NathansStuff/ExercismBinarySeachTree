@@ -24,7 +24,7 @@ class BstTest < Minitest::Test
   end
 
   def test_inserting_right
-    skip
+    # skip
     four = Bst.new 4
     four.insert 5
     assert_equal 4, four.data
