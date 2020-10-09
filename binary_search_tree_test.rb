@@ -49,6 +49,8 @@ class BstTest < Minitest::Test
     assert_equal 7, four.right.right.data
   end
 
+  # Puts all the numbers into an array
+  # Calls the each method to do so
   def record_all_data(bst)
     all_data = []
     bst.each { |data| all_data << data }
@@ -56,7 +58,7 @@ class BstTest < Minitest::Test
   end
 
   def test_iterating_one_element
-    skip
+    # skip
     assert_equal [4], record_all_data(Bst.new(4))
   end
 
