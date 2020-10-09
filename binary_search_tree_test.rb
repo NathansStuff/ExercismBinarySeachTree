@@ -77,7 +77,7 @@ class BstTest < Minitest::Test
   end
 
   def test_iterating_over_complex_tree
-    skip
+    # skip
     four = Bst.new 4
     four.insert 2
     four.insert 1
@@ -89,12 +89,12 @@ class BstTest < Minitest::Test
   end
 
   def test_each_returns_enumerator_if_no_block
-    skip
+    # skip
 
     tree = Bst.new 4
-    [2, 1, 3, 6, 7, 5].each { |x| tree.insert x }
-    each_enumerator = tree.each
-
+    [2, 1, 3, 6, 7, 5].each { |x| tree.insert x } 
+    each_enumerator = tree.each 
+    
     assert_kind_of Enumerator, each_enumerator
 
     (1..7).each { |x| assert_equal(x, each_enumerator.next) }

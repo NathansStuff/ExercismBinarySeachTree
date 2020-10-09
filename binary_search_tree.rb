@@ -49,14 +49,33 @@ class Bst
         end
     end
 
-    def each(&block)
+    def each(&block) # Uses the block of code passed directly after this method was called
+        
         if @left != nil
-            left.each(&block)
+            left.each(&block) # Go down a level and call the function again
         end
-        block.call(self.data)
+
+        begin
+            block.call(self.data) # For the specific calling of this method, return the data
+        rescue NoMethodError # If not passed any block data; (nil method for nilclass)
+            return enum_for(:each) #NFI
+        end
+        
         if @right != nil
-            right.each(&block)
+            right.each(&block) # Go down a level and call the function again
         end
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     #     puts @num #works
