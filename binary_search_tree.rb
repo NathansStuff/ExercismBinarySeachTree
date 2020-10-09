@@ -50,10 +50,13 @@ class Bst
     end
 
     def each(&block)
-
-    
+        if @left != nil
+            left.each(&block)
+        end
         block.call(self.data)
-        
+        if @right != nil
+            right.each(&block)
+        end
 
 
     #     puts @num #works
